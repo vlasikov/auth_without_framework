@@ -1,0 +1,33 @@
+
+приложение
+views:
+app/views
+
+контроллер:
+app/controllers/home.php
+
+модель:
+app/models/User.php
+
+база данных на mysql
+// CREATE TABLE trlogic_users (id INT NOT NULL PRIMARY KEY AUTO_INCREMENT, username VARCHAR(20), email VARCHAR(200), psw VARCHAR(200), file VARCHAR(200), timestamp TIMESTAMP(6));
+// ALTER TABLE `trlogic_users` ADD INDEX NEWINDEX (`email`);
+к полю email добавлен индекс, т.к. по нему идет поиск юзера
+перед записью в базу поля экранируются. защита от sql инъекций
+параль хранится в виде хеша 
+
+есть возможность переключать интерефейс на русский
+
+есть возможность загрузать графический файл до 100кБ
+
+Тестирование:
+tests/RemoteConnectTest.php
+небольшой юнит тест для проверки доступности страницы
+/var/www/trlogic/vendor/bin$ ./phpunit ../../tests/RemoteConnectTest.php 
+PHPUnit 7.5.16 by Sebastian Bergmann and contributors.
+
+.                                                                   1 / 1 (100%)
+
+Time: 209 ms, Memory: 4.00 MB
+
+OK (1 test, 1 assertion)

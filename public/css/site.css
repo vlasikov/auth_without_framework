@@ -1,0 +1,33 @@
+/* html,
+body {
+    margin: 0;
+    padding: 0;
+} */
+
+.visible {
+    display: block;
+}
+
+.hidden {
+    display: none;
+}
+
+.hide {
+    visibility: hidden;
+}
+
+
+/*Стили для скрытого выпадающего меню*/
+
+#menu>li>ul {
+    position: absolute;
+    top: 20px;
+    display: none;
+}
+
+
+/*Делаем скрытую часть видимой*/
+
+#menu>li:hover>ul {
+    display: block;
+}
